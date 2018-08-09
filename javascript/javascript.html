@@ -4,11 +4,15 @@
     
   </head>
   <body>
-    <button onclick="alert('Hi!')">Click Me!</button>
+    <p id="text">Hello World</p>
+    <button id="myButton">Chang text</button>
     <script type="text/Javascript">
-      alert('page is loaded!');
-    </script>
-    
+      document.getElementById("myButton").onclick = function(){
+          document.getElementById("text").innerHTML = "Hello"
+            }
+       
+       </script>
+
   </body>
 </html>
   
