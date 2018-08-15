@@ -10,6 +10,9 @@
     <p id="secondParagraph">Javascript is ...</p>
     <button id="secondButton">Chang text</button>
 
+    <p id="emptyParagraph"></p>
+    <button id = "createParagraph">Create text</button>
+
     <script type="text/Javascript">
       document.getElementById("myButton").onclick = function() {
           document.getElementById("text").innerHTML = "Hello";
@@ -18,6 +21,10 @@
           document.getElementById("secondParagraph").innerHTML = 
             "I think " + document.getElementById("secondParagraph").innerHTML + "Awesome";
       }       
+
+      document.getElementById("createParagraph").onclick = function() {
+        document.getElementById("emptyParagraph").innerHTML = "<h1>Hi there!</h1>";
+      }
     </script>
 
   </body>
