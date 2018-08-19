@@ -1,32 +1,40 @@
 <html>
   <head>
     <title>Javascript</title>
-    
-  </head>
-  <body>
-    <p id="text">Hello World</p>
-    <button id="myButton">Chang text</button>
-
-    <p id="secondParagraph">Javascript is ...</p>
-    <button id="secondButton">Chang text</button>
-
-    <p id="emptyParagraph"></p>
-    <button id = "createParagraph">Create text</button>
-
-    <script type="text/Javascript">
-      document.getElementById("myButton").onclick = function() {
-          document.getElementById("text").innerHTML = "Hello";
+    <style type="text/css">
+      .circle {
+        width:130px;
+        height:130px;
+        float:left;
+        border-radius:50%;
+        margin-right:50px;
       }
-      document.getElementById("secondButton").onclick = function() {
-          document.getElementById("secondParagraph").innerHTML = 
-            "I think " + document.getElementById("secondParagraph").innerHTML + "Awesome";
-      }       
+      #red-circle{
+        background-color:red;
+      }
+      #blue-circle{
+        background-color:blue;
+      }
+      #yellow-circle{
+        background-color:yellow;
+      }
+    </style>
+  </head>
 
-      document.getElementById("createParagraph").onclick = function() {
-        document.getElementById("emptyParagraph").innerHTML = "<h1>Hi there!</h1>";
+  <body>
+    <div class="circle" id="red-circle"></div>
+    <div class="circle" id="blue-circle"></div>
+    <div class="circle" id="yellow-circle"></div>
+    <script type="text/Javascript">
+      document.getElementById("red-circle").onclick = function() {
+        document.getElementById("red-circle").style.display = "none";
+      }
+      document.getElementById("blue-circle").onclick = function() {
+        document.getElementById("blue-circle").style.display = "none";
+      }
+      document.getElementById("yellow-circle").onclick = function() {
+        document.getElementById("yellow-circle").style.display = "none";
       }
     </script>
-
   </body>
 </html>
-  
