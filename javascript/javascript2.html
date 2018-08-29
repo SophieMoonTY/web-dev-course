@@ -4,12 +4,13 @@
   </head>
 
   <body>
-    <div class="circle" id="red-circle"></div>
-    <div class="circle" id="blue-circle"></div>
-    <div class="circle" id="yellow-circle"></div>
+    <input type="text">
+    <button id="textChanger">Change the text!</button>
+    <p>This some text.</p>
     <script type="text/Javascript">
-      var x = 5;
-      alert(x);
+      document.getElementById("textChanger").onclick = function(){
+        alert("Hi Moon!");
+      }
     </script>
   </body>
 </html>
