@@ -6,11 +6,13 @@
   <body>
     <input type="text" id ="textInput">
     <button id="textChanger">Change the text!</button>
-    <p>This some text.</p>
+    <p id="text">This is some text.</p>
     <script type="text/Javascript">
       document.getElementById("textChanger").onclick = function(){
-        alert("Hi Moon!");
+        var textEntered = "";
+        textEntered = document.getElementById("textInput").value;
         // console.log(' Input by User : ', textEntered)
+        document.getElementById("text").innerHTML = textEntered;
       }
     </script>
   </body>
