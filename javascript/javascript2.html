@@ -7,7 +7,6 @@
 
     <p>What is magic word ?</p>
     <p><input type="text" id="magicword"></p>
-
     <p><button id="bttn">Enter</button></p>
     
     <script type="text/Javascript">
@@ -21,9 +20,20 @@
 
       var x = 12;
       if (x == 1) {
-        alert(' x is 1 !!!');
+        // alert(' x is 1 !!!');
       } else {
-        alert (' x is not 1 ...');
+        // alert (' x is not 1 ...');
+      }
+
+      document.getElementById("bttn").onclick = function () {
+        var magicWord = document.getElementById("magicword").value;
+        var realMagicWord = "Point the 'hi'!";
+        if (magicWord == realMagicWord) {
+          alert("You are THE 'hi'! ");
+        } else {
+          alert("You are so stupit!");
+          
+        }
       }
     </script>
   </body>
