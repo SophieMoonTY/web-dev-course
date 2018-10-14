@@ -4,15 +4,19 @@
   </head>
 
   <body>
-
+    <div id="tweetDiv"></div>
 
     <script type="text/Javascript">
+      var tweetString;
       var tweets = ["Hi everyone!","I love conflakes!","Night night :)",
       "sweets dream!"];
 
-      for (var i = 0; i < tweets.length; i++) {
-        alert(tweets[i]);
-    }
+      for(var i = 0; i < tweets.length; i++) {
+        tweetString = tweetString +  "<p>" + tweets[i] + "</p>";
+        console.log(' >>> ', tweetString);
+        
+      }
+    document.getElementById("tweetDiv").innerHTML = tweetString;
 
     </script>
   </body>
