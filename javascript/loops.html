@@ -7,17 +7,17 @@
     <div id="tweetDiv"></div>
 
     <script type="text/Javascript">
-      var tweetString;
+      var tweetString = "";
       var tweets = ["Hi everyone!","I love conflakes!","Night night :)",
       "sweets dream!"];
 
-      for(var i = 0; i < tweets.length; i++) {
-        tweetString = tweetString +  "<p>" + tweets[i] + "</p>";
-        console.log(' >>> ', tweetString);
-        
+      var i = 0;
+      while(i < tweets.length){
+        tweetString = tweetString = "<p>" + tweets[i] + "</p>";
+        i++;
       }
-    document.getElementById("tweetDiv").innerHTML = tweetString;
-
+      
+    document.getElementById("tweetDiv").innerHTML = tweetString;  
     </script>
   </body>
 </html>
