@@ -8,7 +8,16 @@
     <button id="guess">Guess!</button>
     <script type="text/javascript">
     document.getElementById("guess").onclick = funtion(){
-
+      var myNumber = document.getElementById("myNumber").value;
+      var gotIt = false;
+      var guess = Math.random();
+      guess = guess * 6;
+      guess = Math.floor(guess);
+      if(guess == myNumber){
+          // Computer is correct
+      } else{
+          // Computer is wrong
+      }
     }
     
     </script>
