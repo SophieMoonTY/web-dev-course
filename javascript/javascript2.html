@@ -4,19 +4,20 @@
   </head>
 
   <body>
-
     <p>What is magic word ?</p>
     <p><input type="text" id="magicword"></p>
     <p><button id="bttn">Enter</button></p>
-    
+
     <script type="text/Javascript">
-      var myArray = new Array();
-      myArray[0] = "pizza";
-      myArray[1] = "chocolate";
-      var tweets = ["Morning averybody", "I love coffie! "]
-      tweets.push("Back to work!");
-      tweets.splice(1, 1, "Cornflakes for breackfast!", "Num num");
-      console.log(tweets);
+      // Array 는 배열이라고 함. 나열..
+      var myArray = new Array(); // []
+      myArray[0] = 'pizza';
+      myArray[1] = 'chocolate';
+      var tweets = ['Morning everybody', 'I love coffee! ']; // 처음부터 채워서 어레이를 만들었다.
+      tweets.push('Back to work!'); // Array 뒤에 하나의 멤버를 추가하는 함수.
+      console.log(' tweets : ', tweets);
+      tweets.splice(1, 1, 'Corn flakes for breackfast!', 'Num num');
+      console.log(' tweets again : ', tweets);
 
       var x = 12;
       if (x == 1) {
@@ -25,14 +26,13 @@
         // alert (' x is not 1 ...');
       }
 
-      document.getElementById("bttn").onclick = function () {
-        var magicWord = document.getElementById("magicword").value;
-        var realMagicWord = "Point the 'hi'!";
+      document.getElementById('bttn').onclick = function () {
+        var magicWord = document.getElementById('magicword').value;
+        var realMagicWord = 'hi';
         if (magicWord == realMagicWord) {
-          alert("You are THE 'hi'! ");
+          alert('You are < hi >! ');
         } else {
-          alert("You are so stupit!");
-          
+          alert('You are so stupit!');
         }
       }
     </script>
