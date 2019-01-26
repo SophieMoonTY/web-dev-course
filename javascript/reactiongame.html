@@ -6,20 +6,34 @@
         width: 200px;
         height: 200px;
         background-color: red;
+        display: none;
       }
     </style>
   </head>
 
   <body>
-    <p>This is reaction game</p>
+    <p>Your time <span id="timeTaken"></span></p>
     <div id="shape"></div>
     <p><button id="bttn">Enter</button></p>
 
     <script type="text/javascript">
+      var start = new Date().getTime();
+
+      function makeShapeAppear() {
+        document.getElementById("shape").style.display = "block";
+        start = new Date().getTime();
+      }
+
+      setTimeout(makeShapeAppear, 1000);
+
+      console.log(" Time Start :: " + start);
       // Array 는 배열이라고 함. 나열..
       document.getElementById("shape").onclick = function() {
         document.getElementById("shape").style.display = "none";
-        console.log(" clicked ");
+        var end = new Date().getTime();
+        var timeTaken = (end - start) / 1000;
+        document.getElementById("timeTaken").innerHTML = timeTaken + " second";
+        // console.log(" clicked " + (end - start));
       };
     </script>
   </body>
