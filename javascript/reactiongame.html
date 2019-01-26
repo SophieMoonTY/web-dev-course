@@ -15,8 +15,12 @@
     <div id="shape"></div>
     <p><button id="bttn">Enter</button></p>
 
-    <script type="text/Javascript">
+    <script type="text/javascript">
       // Array 는 배열이라고 함. 나열..
+      document.getElementById("shape").onclick = function() {
+        document.getElementById("shape").style.display = "none";
+        console.log(" clicked ");
+      };
     </script>
   </body>
 </html>
