@@ -17,6 +17,7 @@
     <p><button id="bttn">Enter</button></p>
 
     <script type="text/javascript">
+      // https://www.completewebdevelopercourse.com/content/3-javascript/3.15.html
       var start = new Date().getTime();
 
       function getRandomColor() {
@@ -30,15 +31,24 @@
         // 16진수 2개.. 16 * 16 = 256.
         // 숫자 : RGB red, green, blue.  16진수 2개.. 256 * 256 * 256
         var letters = "0123456789ABCDEF".split("");
+        console.log("  splitted ", letters);
+        // console.log("  How are you ", "How are you doing today".split(" "));
         var color = "#";
         for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
+          let ranCol = Math.random();
+          ranCol *= 16;
+          ranCol = Math.floor(ranCol);
+          color += letters[ranCol];
+          console.log("  ranCol ", ranCol, color);
         }
         return color;
       }
 
       function makeShapeAppear() {
         document.getElementById("shape").style.display = "block";
+        document.getElementById(
+          "shape"
+        ).style.backgroundColor = getRandomColor();
         start = new Date().getTime();
       }
 
