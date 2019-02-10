@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <title>Reaction Game</title>
+    <style type="text/css">
+      #shape {
+        width: 200px;
+        height: 200px;
+        top: 300px;
+        left: 200px;
+        background-color: red;
+        display: none;
+        position: absolute;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Your time <span id="timeTaken"></span></p>
+    <div id="shape"></div>
+    <p><button id="bttn">Enter</button></p>
+
+    <script type="text/javascript">
+      // https://www.completewebdevelopercourse.com/content/3-javascript/3.15.html
+      var start = new Date().getTime();
+
+      function getRandomColor() {
+        // 16 진수. 10..
+        // 2진수 ::  1 = 1, 10 = 2, 11 = 3, 100 = 4,
+        // 101 = 5, 110 = 6, 111 = 7, 1000 = 8
+        // 8진수 :: o1 = 1, o3 = 3, o7 = 7, o10 = 8, o11 = 9
+        //   o13 = 11
+        // 16진수 :: h9 = 9, hA = 10, hB = 11, hC = 12, hD = 13,
+        //   hE = 14, hF = 15, hex10 = 16
+        // 16진수 2개.. 16 * 16 = 256.
+        // 숫자 : RGB red, green, blue.  16진수 2개.. 256 * 256 * 256
+        var letters = "0123456789ABCDEF".split("");
+        // console.log("  splitted ", letters);
+        // console.log("  How are you ", "How are you doing today".split(" "));
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          let ranCol = Math.random(); // 0 <  ~ < 1
+          ranCol *= 16; // 0 < ~ < 16
+          ranCol = Math.floor(ranCol); // 0, 1, 2, 3, ..... 15
+          color += letters[ranCol];
+          // console.log("  ranCol ", ranCol, color);
+        }
+        return color;
+      }
+
+      function appearAfterDelay() {
+        setTimeout(makeShapeAppear, Math.random() * 2000);
+      }
+
+      function makeShapeAppear() {
+        var top = Math.random() * 400; // 0 ~ 400
+        var left = Math.random() * 400;
+        var width = Math.random() * 200 + 100; // 100 ~ 300
+        var compo = document.getElementById("shape");
+        if (Math.random() > 0.5) {
+          document.getElementById("shape").style.borderRadius = "50%"; // 원
+        } else {
+          compo.style.borderRadius = "0"; // 사각형
+        }
+        compo.style.backgroundColor = getRandomColor();
+        compo.style.width = width + "px";
+        compo.style.height = width + "px";
+        compo.style.top = top + "px";
+        compo.style.left = left + "px";
+        console.log("  Top ", top, left, compo.style.top);
+        compo.style.display = "block";
+        start = new Date().getTime();
+      }
+
+      // setTimeout(makeShapeAppear, 1000);
+
+      appearAfterDelay();
+      console.log(" Time Start :: " + start);
+      // Array 는 배열이라고 함. 나열..
+      document.getElementById("shape").onclick = function() {
+        console.log("  clicked :: onclick ");
+        document.getElementById("shape").style.display = "none";
+        var end = new Date().getTime();
+        var timeTaken = (end - start) / 1000;
+        document.getElementById("timeTaken").innerHTML = timeTaken + " second";
+        appearAfterDelay();
+      };
+    </script>
+  </body>
+</html>
