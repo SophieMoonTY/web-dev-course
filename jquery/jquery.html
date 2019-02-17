@@ -21,17 +21,20 @@
   <body>
     <div id="circle"></div>
     <p>This is some text ..</p>
-    <iframe
-      src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
-    ></iframe>
+
+    <div class="square"></div>
+    s
+    <div class="square"></div>
 
     <script type="text/javascript">
       // $("#circle").click(function() {
-      $("#circle").hover(function() {
-        $("iframe").attr("src", "https://www.youtube.com/watch?v=ltCEgRndmnU");
-        // alert("Circle was clicked");
-        alert($("p").html());
-        $("p").html(" Changed ");
+      $("div").click(function() {
+        // alert($("p").html());
+        $(this).css("display", "none");
+        alert($(this).attr("id"));
+        // $("#circle").css("background-color", "black");
+        // alert($("body").css("width"));
+        // $("p").html(" Changed ");
       });
       // $(".square").click(function() {
       //   alert("Square was clicked");
